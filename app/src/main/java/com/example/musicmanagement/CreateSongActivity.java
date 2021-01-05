@@ -72,15 +72,15 @@ public class CreateSongActivity extends AppCompatActivity {
         mFirebaseRef = new Firebase(Constants.FIREBASE_REALTIME_DATABASE_URL).child("song");
 
         mFirebaseStorage = FirebaseStorage.getInstance();
-        mStorageReference = mFirebaseStorage.getReferenceFromUrl(Constants.FIREBASE_STORAGE_URL);
-        mStorageReferenceImages = mStorageReference.child("images");
-        mStorageReferenceImages.listAll().addOnCompleteListener(
-            new OnCompleteListener<ListResult>() {
-                @Override
-                public void onComplete(@NonNull Task<ListResult> task) {
-                    System.out.println(task.getResult().getItems());
-                }
-            });
+//        mStorageReference = mFirebaseStorage.getReferenceFromUrl(Constants.FIREBASE_STORAGE_URL);
+//        mStorageReferenceImages = mStorageReference.child("images");
+//        mStorageReferenceImages.listAll().addOnCompleteListener(
+//            new OnCompleteListener<ListResult>() {
+//                @Override
+//                public void onComplete(@NonNull Task<ListResult> task) {
+//                    System.out.println(task.getResult().getItems());
+//                }
+//            });
 
         findViewById(R.id.sendButton).setOnClickListener(view -> onUploadFileClick());
 
